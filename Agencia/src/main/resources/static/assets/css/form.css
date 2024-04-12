@@ -36,9 +36,6 @@ form {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #fff;
-    font-size: 14px;
-    font-family: "Poppins", sans-serif;
 }
 input[type="text"],
 input[type="date"],

@@ -15,6 +15,7 @@ function nextImage(){
 
     document.getElementById('radio'+count).checked = true;
 }
+
 //ANIMAÇAO DA PAGINA =========================================
 
 const elements = document.querySelectorAll('[data-anima]');
