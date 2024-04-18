@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>| Agência de viagem |</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+          
+          <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="nav-list">
+            <li><a href="/">Início</a></li>
+            <li><a href="/pacotes">Pacotes</a></li>
+            <li><a href="/cadastrarPacote">Cadastrar Pacotes</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="container">
+        <div class="table-container">
+            <h2 id="titlePacote">Confira os nossos pacotes</h2>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Descrição</th>
+                        <th>Saiba Mais</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each ="pacote:${pacotes}">
+                        <td><a th:href="${(#mvc.url('PC#detalhesPacote').arg(0, pacote.codigo)).build()}">
+                            <span th:text="${pacote.nome}"></span></a>
+                       
+                    </td>
+                        <td><span th:text="${pacote.preco}"></span></td>
+                        <td><span th:text="${pacote.descricao}"></span></td>
+                        <td><button id="saiba"><a href="#">Saiba mais</a></button></td>
+                        <td><button id="excluir"><a href="#">Excluir</a></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+    <footer>
+        <h2>Agência de Viagens</h2>
+        <p>© 2024 Agência de Viagens. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/MobileMenu.js"></script>
